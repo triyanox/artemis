@@ -1,5 +1,14 @@
 # @artemis-lang/interpreter
 
+## 0.2.1
+
+### Patch Changes
+
+- Added readme files to all packages
+- Updated dependencies
+  - @artemis-lang/lexer@0.2.1
+  - @artemis-lang/parser@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes

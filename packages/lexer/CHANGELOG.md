@@ -1,5 +1,11 @@
 # @artemis-lang/lexer
 
+## 0.2.1
+
+### Patch Changes
+
+- Added readme files to all packages
+
 ## 0.2.0
 
 ### Minor Changes

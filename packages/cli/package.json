@@ -1,6 +1,6 @@
 {
   "name": "@artemis-lang/cli",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "access": "public",
   "description": "The artemis language cli",
   "bin": {

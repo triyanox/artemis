@@ -1,5 +1,17 @@
 # @artemis-lang/lexer
 
+## 0.2.0
+
+### Minor Changes
+
+- 190d6b9: switch to modules
+
+### Patch Changes
+
+- c1effbf: Remove import from source
+- 190d6b9: Update to module
+- 190d6b9: Update to module
+
 ## 0.1.4
 
 ### Patch Changes

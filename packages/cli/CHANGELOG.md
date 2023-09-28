@@ -1,5 +1,20 @@
 # @artemis-lang/cli
 
+## 0.2.0
+
+### Minor Changes
+
+- 190d6b9: switch to modules
+
+### Patch Changes
+
+- c1effbf: Remove import from source
+- Updated dependencies [c1effbf]
+- Updated dependencies [190d6b9]
+- Updated dependencies [190d6b9]
+- Updated dependencies [190d6b9]
+  - @artemis-lang/interpreter@0.2.0
+
 ## 0.1.4
 
 ### Patch Changes

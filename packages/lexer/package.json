@@ -18,7 +18,8 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build": "tsup src/index.ts --dts"
@@ -30,5 +31,10 @@
     "@types/moo": "^0.5.7",
     "tsup": "^7.2.0",
     "tsconfig": "workspace:*"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public",
+    "tag": "latest"
   }
 }

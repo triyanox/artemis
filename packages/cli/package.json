@@ -29,8 +29,9 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "tsup": "^7.2.0",
+    "@types/node": "^20.7.1",
+    "@types/yargs": "^17.0.25",
     "tsconfig": "workspace:*",
-    "@types/yargs": "^17.0.25"
+    "tsup": "^7.2.0"
   }
 }

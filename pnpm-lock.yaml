@@ -80,6 +80,9 @@ importers:
         specifier: workspace:^
         version: link:../parser
     devDependencies:
+      '@types/node':
+        specifier: ^20.7.1
+        version: 20.7.1
       tsconfig:
         specifier: workspace:*
         version: link:../tsconfig

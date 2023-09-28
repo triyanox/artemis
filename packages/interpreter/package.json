@@ -23,11 +23,12 @@
     "build": "tsup src/index.ts --dts"
   },
   "dependencies": {
-    "@artemis/parser": "workspace:^",
-    "@artemis/lexer": "workspace:^"
+    "@artemis/lexer": "workspace:^",
+    "@artemis/parser": "workspace:^"
   },
   "devDependencies": {
-    "tsup": "^7.2.0",
-    "tsconfig": "workspace:*"
+    "@types/node": "^20.7.1",
+    "tsconfig": "workspace:*",
+    "tsup": "^7.2.0"
   }
 }

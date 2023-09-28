@@ -2,6 +2,7 @@
   "name": "@artemis-lang/interpreter",
   "version": "0.1.4",
   "access": "public",
+  "type": "module",
   "description": "The artemis language interpreter",
   "keywords": [
     "artemis",

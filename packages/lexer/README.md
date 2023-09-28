@@ -1,4 +1,4 @@
-# **artemis** - A simple, easy to learn, and easy to use programming language written in typescript.
+# **artemis** - The lexer for the **artemis** programming language
 
 <img src="https://raw.githubusercontent.com/triyanox/artemis/main/assets/banner.png" alt="artemis banner" title="artemis" align="center" height="auto" width="100%"/>
 
@@ -343,7 +343,6 @@ This is a list of built-in functions:
 - `every`: Returns true if all elements of an array satisfy a given condition.
 - `fill`: Changes all elements of an array to a given value.
 - `copyWithin`: Copies a portion of an array to another location in the same array.
-
 
 
 ### JS-Interop

@@ -1,5 +1,11 @@
 # @artemis-lang/cli
 
+## 0.2.3
+
+### Patch Changes
+
+- d14ee28: Add new methods : save-ast save-lex ast and le
+
 ## 0.2.1
 
 ### Patch Changes

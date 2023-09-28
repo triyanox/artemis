@@ -14,8 +14,8 @@
   "author": "Mohamed Achaq <hi@achaq.dev>",
   "homepage": "https://artemis.achaq.dev",
   "license": "MIT",
-  "main": "dist/index.mjs",
-  "types": "dist/index.d.mts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],

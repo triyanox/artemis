@@ -4,7 +4,7 @@
   "access": "public",
   "description": "The artemis language cli",
   "bin": {
-    "artemis": "./bin/index.mjs"
+    "artemis": "./bin/index.js"
   },
   "files": [
     "bin"

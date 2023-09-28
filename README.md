@@ -1,5 +1,7 @@
 # **artemis** - A simple, easy to learn, and easy to use programming language written in typescript.
 
+<img src="https://raw.githubusercontent.com/triyanox/artemis/main/assets/banner.png" alt="artemis banner" title="artemis" align="center" height="auto" width="100%"/>
+
 **artemis** is a simple, easy to learn, and easy to use programming language. It is designed to be a general purpose language, and it's built on top of typescript.
 
 ## Table of Contents
@@ -28,7 +30,25 @@ npm install -g @artemis-lang/cli
 ## Usage
 
 ```bash
-artemis <file>
+ _____     _             _
+|  _  |___| |_ ___ _____|_|___
+|     |  _|  _| -_|     | |_ -|
+|__|__|_| |_| |___|_|_|_|_|___|
+
+https://github.com/triyanox/artemis
+
+>  Usage: artemis <command> [options]
+
+Commands:
+  artemis run <file>             Interpret a file
+  artemis ast <file>             Print the AST of a file
+  artemis lex <file>             Print the lexemes of a file
+  artemis save-ast <file> <out>  Save the AST of a file to a file
+  artemis save-lex <file> <out>  Save the lexemes of a file to a file
+
+Options:
+  --version  Show version number                                       [boolean]
+  --help     Show help                                                 [boolean]
 ```
 
 ## Syntax

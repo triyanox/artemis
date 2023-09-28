@@ -1,5 +1,11 @@
 # @artemis-lang/lexer
 
+## 0.1.4
+
+### Patch Changes
+
+- Remove import from src
+
 ## 0.1.3
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @artemis-lang/parser
 
+## 0.1.4
+
+### Patch Changes
+
+- Remove import from src
+- Updated dependencies
+  - @artemis-lang/lexer@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes

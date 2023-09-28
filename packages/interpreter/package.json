@@ -1,6 +1,6 @@
 {
   "name": "@artemis-lang/interpreter",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "access": "public",
   "description": "The artemis language interpreter",
   "keywords": [

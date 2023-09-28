@@ -4,7 +4,7 @@ import NodeTypes from '../node/node-types';
 import Program from '../types/program';
 import error from '../error';
 import plugins from '../plugins';
-import Lexer from '@artemis-lang/lexer/src';
+import Lexer from '@artemis-lang/lexer';
 
 class Parser {
   tokens: Token[];

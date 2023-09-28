@@ -1,5 +1,5 @@
 import Interpreter from '..';
-import { Node } from '@artemis-lang/parser/src';
+import { Node } from '@artemis-lang/parser';
 import Environment from '../../env';
 
 class For {

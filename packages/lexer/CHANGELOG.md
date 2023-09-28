@@ -1,4 +1,4 @@
-# @artemis/lexer
+# @artemis-lang/lexer
 
 ## 0.1.1
 

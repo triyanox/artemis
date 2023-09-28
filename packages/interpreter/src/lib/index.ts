@@ -1,7 +1,7 @@
-import Parser, { Node } from '@artemis/parser/src';
-import Lexer from '@artemis/lexer/src';
-import { NodeType } from '@artemis/parser/src';
-import { Program } from '@artemis/parser/src';
+import Parser, { Node } from '@artemis-lang/parser/src';
+import Lexer from '@artemis-lang/lexer/src';
+import { NodeType } from '@artemis-lang/parser/src';
+import { Program } from '@artemis-lang/parser/src';
 import Environment from '../env';
 import { loadGlobals } from '../globals';
 import { loadNative } from '../native-fns';

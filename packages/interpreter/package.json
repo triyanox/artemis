@@ -1,5 +1,5 @@
 {
-  "name": "@artemis/interpreter",
+  "name": "@artemis-lang/interpreter",
   "version": "0.1.1",
   "access": "public",
   "description": "The artemis language interpreter",
@@ -24,8 +24,8 @@
     "build": "tsup src/index.ts --dts"
   },
   "dependencies": {
-    "@artemis/lexer": "workspace:^",
-    "@artemis/parser": "workspace:^"
+    "@artemis-lang/lexer": "workspace:^",
+    "@artemis-lang/parser": "workspace:^"
   },
   "devDependencies": {
     "@types/node": "^20.7.1",

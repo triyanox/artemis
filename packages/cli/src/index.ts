@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-import Interpreter from '@artemis/interpreter';
+import Interpreter from '@artemis-lang/interpreter';
 import chalk from 'chalk';
 import fs from 'fs';
 import yargs from 'yargs';

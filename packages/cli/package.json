@@ -1,5 +1,5 @@
 {
-  "name": "@artemis/cli",
+  "name": "@artemis-lang/cli",
   "version": "0.1.1",
   "access": "public",
   "description": "The artemis language cli",
@@ -24,7 +24,7 @@
     "build": "tsup src/*"
   },
   "dependencies": {
-    "@artemis/interpreter": "workspace:^",
+    "@artemis-lang/interpreter": "workspace:^",
     "chalk": "^5.3.0",
     "yargs": "^17.7.2"
   },

@@ -22,7 +22,7 @@
 ## Installation
 
 ```bash
-npm install -g @artemis/cli
+npm install -g @artemis-lang/cli
 ```
 
 ## Usage

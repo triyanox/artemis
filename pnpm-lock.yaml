@@ -36,7 +36,7 @@ importers:
 
   packages/cli:
     dependencies:
-      '@artemis/interpreter':
+      '@artemis-lang/interpreter':
         specifier: workspace:^
         version: link:../interpreter
       chalk:
@@ -73,10 +73,10 @@ importers:
 
   packages/interpreter:
     dependencies:
-      '@artemis/lexer':
+      '@artemis-lang/lexer':
         specifier: workspace:^
         version: link:../lexer
-      '@artemis/parser':
+      '@artemis-lang/parser':
         specifier: workspace:^
         version: link:../parser
     devDependencies:
@@ -108,7 +108,7 @@ importers:
 
   packages/parser:
     dependencies:
-      '@artemis/lexer':
+      '@artemis-lang/lexer':
         specifier: workspace:^
         version: link:../lexer
     devDependencies:

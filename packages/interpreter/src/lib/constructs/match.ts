@@ -1,5 +1,5 @@
 import Interpreter from '..';
-import { NodeType } from '@artemis/parser';
+import { NodeType } from '@artemis/parser/src';
 import Environment from '../../env';
 
 class Match {

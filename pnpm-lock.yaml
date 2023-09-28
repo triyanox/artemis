@@ -111,6 +111,10 @@ importers:
       '@artemis/lexer':
         specifier: workspace:^
         version: link:../lexer
+    devDependencies:
+      '@types/node':
+        specifier: ^20.7.1
+        version: 20.7.1
 
   packages/tsconfig: {}
 

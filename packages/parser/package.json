@@ -23,6 +23,9 @@
   "scripts": {
     "build": "tsup src/index.ts --dts"
   },
+  "devDependencies": {
+    "@types/node": "^20.7.1"
+  },
   "dependencies": {
     "@artemis/lexer": "workspace:^"
   }

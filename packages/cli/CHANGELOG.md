@@ -1,5 +1,11 @@
 # @artemis-lang/cli
 
+## 0.2.1
+
+### Patch Changes
+
+- Switch to esm
+
 ## 0.2.0
 
 ### Minor Changes

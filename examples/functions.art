@@ -1,0 +1,7 @@
+(fn add [a b] ((+ a b)))
+(fn wrapper [] ((add 1 2)))
+(def a (wrapper))
+(println a)
+
+(fn addTwo [a]((def sum (+ a 2))(return sum)))
+(println (addTwo 1))

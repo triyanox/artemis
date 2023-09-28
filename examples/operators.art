@@ -1,0 +1,28 @@
+/* Logical Operators */
+(def a true)
+(def b false)
+(def c 1)
+(def d 2)
+(&& a b)
+(|| a b)
+(! a)
+(== c d)
+(!= c d)
+
+/* Arithmetic Operators */
+(def a 1)
+(def b 2)
+(+ a b)
+(- a b)
+(* a b)
+(/ a b)
+(% a b)
+(^ a b)
+
+/* Bitwise Operators */
+(def a 1)
+(def b 2)
+(~ a)
+(<< a b)
+(>> a b)
+(>>> a b)

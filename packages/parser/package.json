@@ -1,0 +1,28 @@
+{
+  "name": "@artemis/parser",
+  "version": "0.1.0",
+  "access": "public",
+  "description": "The artemis language parser",
+  "keywords": [
+    "artemis",
+    "programming",
+    "language",
+    "bun",
+    "typescript",
+    "parser"
+  ],
+  "author": "Mohamed Achaq <hi@achaq.dev>",
+  "homepage": "https://artemis.achaq.dev",
+  "license": "MIT",
+  "main": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --dts"
+  },
+  "dependencies": {
+    "@artemis/lexer": "workspace:^"
+  }
+}

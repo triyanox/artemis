@@ -1,0 +1,33 @@
+{
+  "name": "@artemis/lexer",
+  "version": "0.1.0",
+  "access": "public",
+  "description": "The artemis language lexer",
+  "keywords": [
+    "artemis",
+    "programming",
+    "language",
+    "bun",
+    "typescript",
+    "lexer"
+  ],
+  "author": "Mohamed Achaq <hi@achaq.dev>",
+  "homepage": "https://artemis.achaq.dev",
+  "license": "MIT",
+  "main": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --dts"
+  },
+  "dependencies": {
+    "moo": "^0.5.2"
+  },
+  "devDependencies": {
+    "@types/moo": "^0.5.7",
+    "tsup": "^7.2.0",
+    "tsconfig": "workspace:*"
+  }
+}

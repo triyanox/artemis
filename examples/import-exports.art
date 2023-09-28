@@ -1,0 +1,11 @@
+/* export */
+(def a 1)
+(def b 2)
+(def c 3)
+
+(export a b c)
+```
+
+```rs
+/* import */
+(import "file.artemis" [a b c])

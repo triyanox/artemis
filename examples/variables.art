@@ -1,0 +1,8 @@
+(def b "Hello World") /* String */
+(def c 1) /* Number */
+(def d true) /* Boolean */
+(def f [1, 2, 3]) /* List */
+(def g {a: 1, b: 2}) /* Map */
+(def h #[1, 2, 3]) /* Set */
+(def bin 0b1010) /* Binary */
+(def hex 0x12F) /* Hex */

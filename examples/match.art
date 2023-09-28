@@ -1,0 +1,16 @@
+  (def a [])
+  (match a {
+    1 : (println "1"),
+    2 : (for [i 0 10] ((println i))),
+    3 : (for [i 0 10] (( def mul ( * (+ i 4 ) 3 ) ) (println mul) )),
+    _ : (for [i 0 2] (
+          (for [j 0 3] (
+            (push a 69)
+            (println "From inner" j)
+            (pop a)
+          ))
+          (push a 69)
+          (println "From outer" i)
+          (pop a)
+        ))
+  })

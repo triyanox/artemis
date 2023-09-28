@@ -1,0 +1,11 @@
+(js $
+  const a = 12;
+  const b = 23;
+  const c = a + b;
+  console.log(c);
+  const d = "Hello World";
+  console.log(d);
+$)
+
+(def a (js $ 12 $))
+(println a)

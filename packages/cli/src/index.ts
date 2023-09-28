@@ -25,17 +25,89 @@ console.log = function (...args: any[]) {
   cl.apply(console, newArgs);
 };
 
-const filePath = yargs(hideBin(process.argv))
+yargs(hideBin(process.argv))
+  .usage('Usage: $0 <command> [options]')
   .command(
-    '<filepath>',
-    'Interpretes the code and prints to stdout',
-    () => {},
+    'run <file>',
+    'Interpret a file',
+    (yargs) => {
+      yargs.positional('file', {
+        describe: 'The file to interpret',
+        type: 'string'
+      });
+    },
     (argv) => {
-      console.info(argv);
+      interpretFile(argv.file as string);
     }
   )
-  // @ts-ignore
-  .demandCommand(1).argv._[0];
+  .command(
+    'ast <file>',
+    'Print the AST of a file',
+    (yargs) => {
+      yargs.positional('file', {
+        describe: 'The file to interpret',
+        type: 'string'
+      });
+    },
+    (argv) => {
+      astFromFile(argv.file as string).then((ast) => {
+        console.log(JSON.stringify(ast, null, 2));
+      });
+    }
+  )
+  .command(
+    'lex <file>',
+    'Print the lexemes of a file',
+    (yargs) => {
+      yargs.positional('file', {
+        describe: 'The file to interpret',
+        type: 'string'
+      });
+    },
+    (argv) => {
+      lexFromFile(argv.file as string).then((tokens) => {
+        console.log(JSON.stringify(tokens, null, 2));
+      });
+    }
+  )
+  .command(
+    'save-ast <file> <out>',
+    'Save the AST of a file to a file',
+    (yargs) => {
+      yargs
+        .positional('file', {
+          describe: 'The file to interpret',
+          type: 'string'
+        })
+        .positional('out', {
+          describe: 'The file to save the AST to',
+          type: 'string'
+        });
+    },
+    (argv) => {
+      saveAstToFile(argv.file as string, argv.out as string);
+    }
+  )
+  .command(
+    'save-lex <file> <out>',
+    'Save the lexemes of a file to a file',
+    (yargs) => {
+      yargs
+        .positional('file', {
+          describe: 'The file to interpret',
+          type: 'string'
+        })
+        .positional('out', {
+          describe: 'The file to save the lexemes to',
+          type: 'string'
+        });
+    },
+    (argv) => {
+      saveLexToFile(argv.file as string, argv.out as string);
+    }
+  )
+  .demandCommand(1, 'You need at least one command before moving on')
+  .help().argv;
 
 async function readFileAsync(filePath: string): Promise<string> {
   return new Promise<string>((resolve, reject) => {
@@ -44,6 +116,18 @@ async function readFileAsync(filePath: string): Promise<string> {
         reject(err);
       } else {
         resolve(data);
+      }
+    });
+  });
+}
+
+async function writeFileAsync(filePath: string, data: string): Promise<void> {
+  return new Promise<void>((resolve, reject) => {
+    fs.writeFile(filePath, data, (err) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve();
       }
     });
   });
@@ -60,8 +144,48 @@ async function interpretFile(filePath: string): Promise<void> {
   }
 }
 
-process.on('unhandledRejection', (reason) => {
-  console.error('Unhandled Promise Rejection:', reason);
-});
+async function astFromFile(filePath: string) {
+  try {
+    const data = await readFileAsync(filePath);
+    return Interpreter.ast(data);
+  } catch (ex) {
+    if (ex instanceof Error) {
+      console.error('\n', chalk.redBright(ex.stack));
+    }
+  }
+}
 
-interpretFile(filePath);
+async function lexFromFile(filePath: string) {
+  try {
+    const data = await readFileAsync(filePath);
+    return Interpreter.tokens(data);
+  } catch (ex) {
+    if (ex instanceof Error) {
+      console.error('\n', chalk.redBright(ex.stack));
+    }
+  }
+}
+
+async function saveAstToFile(filePath: string, outPath: string) {
+  try {
+    const data = await readFileAsync(filePath);
+    const ast = Interpreter.ast(data);
+    await writeFileAsync(outPath, JSON.stringify(ast, null, 2));
+  } catch (ex) {
+    if (ex instanceof Error) {
+      console.error('\n', chalk.redBright(ex.stack));
+    }
+  }
+}
+
+async function saveLexToFile(filePath: string, outPath: string) {
+  try {
+    const data = await readFileAsync(filePath);
+    const tokens = Interpreter.tokens(data);
+    await writeFileAsync(outPath, JSON.stringify(tokens, null, 2));
+  } catch (ex) {
+    if (ex instanceof Error) {
+      console.error('\n', chalk.redBright(ex.stack));
+    }
+  }
+}

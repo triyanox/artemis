@@ -1,5 +1,11 @@
 # @artemis-lang/lexer
 
+## 0.1.3
+
+### Patch Changes
+
+- 9e8a086: Include src in build
+
 ## 0.1.2
 
 ### Patch Changes

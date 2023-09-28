@@ -1,5 +1,14 @@
 # @artemis-lang/interpreter
 
+## 0.1.3
+
+### Patch Changes
+
+- 9e8a086: Include src in build
+- Updated dependencies [9e8a086]
+  - @artemis-lang/parser@0.1.3
+  - @artemis-lang/lexer@0.1.3
+
 ## 0.1.2
 
 ### Patch Changes

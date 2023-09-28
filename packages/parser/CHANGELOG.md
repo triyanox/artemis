@@ -1,5 +1,13 @@
 # @artemis-lang/parser
 
+## 0.2.3
+
+### Patch Changes
+
+- 26a089a: Bump versions
+- Updated dependencies [26a089a]
+  - @artemis-lang/lexer@0.2.3
+
 ## 0.2.1
 
 ### Patch Changes

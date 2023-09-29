@@ -1,10 +1,36 @@
 class Environment {
   private values: { [key: string]: any } = {};
+  private returnValue: any = undefined;
 
   constructor(private parent?: Environment) {}
 
+  getParent(): Environment | undefined {
+    return this.parent;
+  }
+
   set(name: string, value: any): void {
     this.values[name] = value;
+  }
+
+  setToParent(name: string, value: any): void {
+    if (this.parent) {
+      this.parent.set(name, value);
+    }
+  }
+
+  getFromParent(name: string): any {
+    if (this.parent) {
+      return this.parent.get(name);
+    }
+    throw new Error(`Variable '${name}' not found.`);
+  }
+
+  setReturn(value: any): void {
+    this.returnValue = value;
+  }
+
+  getReturn(): any {
+    return this.returnValue;
   }
 
   get(name: string): any {

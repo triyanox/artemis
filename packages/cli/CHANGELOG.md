@@ -1,5 +1,13 @@
 # @artemis-lang/cli
 
+## 0.2.6
+
+### Patch Changes
+
+- 26a089a: Bump versions
+- Updated dependencies [26a089a]
+  - @artemis-lang/interpreter@0.2.3
+
 ## 0.2.4
 
 ### Patch Changes

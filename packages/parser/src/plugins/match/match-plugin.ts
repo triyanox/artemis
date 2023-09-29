@@ -6,15 +6,13 @@ const matchPlugin = new ParserPlugin(
     return (
       parser.peek().type === 'lp' &&
       parser.nextByType(1) === 'keyword' &&
-      parser.nextBy(1).value === 'match' &&
-      parser.nextByType(2) === 'identifier' &&
-      parser.nextByType(3) === 'lb'
+      parser.nextBy(1).value === 'match'
     );
   },
   (parser) => {
     parser.consume('lp', 'Expected left parenthesis');
     parser.consume('keyword', 'Expected keyword');
-    const ref = parser.consume('identifier', 'Expected identifier');
+    const condition = parser.parseExpression();
     parser.consume('lb', 'Expected left brace');
     const value = new Map();
     while (parser.peek().type !== 'rb' && !parser.isAtEnd()) {
@@ -29,10 +27,7 @@ const matchPlugin = new ParserPlugin(
     return {
       type: NodeTypes.Match,
       value: value,
-      ref: {
-        type: NodeTypes.Reference,
-        value: ref.value
-      }
+      condition
     };
   }
 );

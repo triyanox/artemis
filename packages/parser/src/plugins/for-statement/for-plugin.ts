@@ -15,9 +15,9 @@ const forPlugin = new ParserPlugin(
     parser.consume('keyword', 'Expected keyword');
     parser.consume('lbk', 'Expected left bracket');
     const index = parser.consume('identifier', 'Expected identifier');
-    const start = parser.consume('number', 'Expected number');
-    const end = parser.consume('number', 'Expected number');
-    const step = parser.match('number') ? parser.consume('number', 'Expected number') : null;
+    const start = parser.parseExpression();
+    const end = parser.parseExpression();
+    const step = parser.peek().type !== 'rbk' ? parser.parseExpression() : null;
     parser.consume('rbk', 'Expected right bracket');
     parser.consume('lp', 'Expected left parenthesis');
     const body = [];
@@ -29,9 +29,9 @@ const forPlugin = new ParserPlugin(
     return {
       type: NodeTypes.For,
       index: index.value,
-      start: start.value,
-      end: end.value,
-      step: step ? step.value : null,
+      start: start,
+      end: end,
+      step: step ? step : null,
       body: body
     };
   }

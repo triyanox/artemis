@@ -7,7 +7,6 @@ const binaryPlugin = new ParserPlugin(
   },
   (parser) => {
     const left = parser.consume('binary', 'Expected binary').value;
-    console.log(left);
     return {
       type: NodeTypes.BinaryLiteral,
       value: left

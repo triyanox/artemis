@@ -58,6 +58,14 @@ import copyWithin from './copyWithin';
 import join from './join';
 import Interpreter from '..';
 import js from './js';
+import int from './int';
+import sqrt from './sqrt';
+import set from './set';
+import has from './has';
+import get from './get';
+import del from './del';
+import readFile from './readFile';
+import writeFile from './writeFile';
 
 const nativeFns = [
   print,
@@ -118,7 +126,15 @@ const nativeFns = [
   every,
   fill,
   copyWithin,
-  js
+  js,
+  int,
+  sqrt,
+  set,
+  has,
+  get,
+  del,
+  readFile,
+  writeFile
 ];
 
 /**

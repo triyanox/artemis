@@ -1,4 +1,4 @@
-import NodeType from '../../parser/types/node-type';
+import { NodeType } from '@artemis-lang/parser';
 import Environment from '../env';
 import Fn from '../lib/constructs/function';
 import NativeFn from './native-fn';

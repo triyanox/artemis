@@ -1,0 +1,6 @@
+(def fib [0, 1])
+(for [i 2 10] (
+  (def next (+ (at fib (- i 1)) (at fib (- i 2))))
+  (push fib next)
+))
+(println fib)

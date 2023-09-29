@@ -1,0 +1,19 @@
+/* Function to play the FizzBuzz game up to a specified limit */
+(fn fizzBuzz [limit](
+  (for [i 1 (+ limit 1)](
+    (if (( && (== (% i 3) 0) (!= (% i 5) 0)))
+      ((println "Fizz"))
+      ((if ((&& (!= (% i 3) 0) (== (% i 5) 0)))
+        ((println "Buzz"))
+        ((if ((&& (== (% i 3) 0) (== (% i 5) 0)))
+          ((println "FizzBuzz"))
+          ((println i))
+        ))
+      ))
+    )
+  ))
+))
+
+/* Usage: Play FizzBuzz up to a specified limit (e.g., 100) */
+(def limit 10)
+(fizzBuzz limit)

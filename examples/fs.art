@@ -1,0 +1,3 @@
+(def fileContent (readFile "README.md"))
+(println fileContent)
+(writeFile "bambo.md" "Hello World!")

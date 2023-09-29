@@ -1,0 +1,24 @@
+(fn countWordOccurrences [text](
+  (def wordCount {})
+  (def words (split text " "))
+
+  (while ((< 0 (length words)))(
+    (def word (shift words))
+    (if ((has wordCount word))(
+      (set wordCount word (+ (get wordCount word) 1))
+    )(
+      (set wordCount word 1)
+    ))
+  ))
+
+  (return wordCount)
+))
+
+(def sampleText "This is a sample  text. This text is for testing purposes.")
+(def wordOccurrences (countWordOccurrences sampleText))
+(println "Word Occurrences:")
+(while ((< 0 (length (keys wordOccurrences))))(
+  (def word (shift (keys wordOccurrences)))
+  (println word ": " (get wordOccurrences word))
+  (del wordOccurrences word)
+))

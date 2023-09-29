@@ -15,6 +15,7 @@ const spec = {
     'return'
   ],
   nativeFn: [
+    'int',
     'print',
     'println',
     'exit',
@@ -47,6 +48,12 @@ const spec = {
     'join',
     'split',
     'trim',
+    'set',
+    'has',
+    'get',
+    'del',
+    'writeFile',
+    'readFile',
     'trimStart',
     'trimEnd',
     'replace',
@@ -73,7 +80,8 @@ const spec = {
     'every',
     'fill',
     'copyWithin',
-    'js'
+    'js',
+    'sqrt'
   ],
   return: 'return',
   jsCode: { match: /\$[^]*?\$/, lineBreaks: true },

@@ -15,6 +15,8 @@ class While {
 
   call(): any {
     const whileEnv = new Environment(this.env);
+    let returnValue;
+
     while (true) {
       const interpreter = new Interpreter();
       if (interpreter.visit(this.condition, whileEnv)) {
@@ -25,9 +27,18 @@ class While {
           },
           whileEnv
         );
+
+        if (whileEnv.getReturn() !== undefined) {
+          returnValue = whileEnv.getReturn();
+          break;
+        }
       } else {
         break;
       }
+    }
+
+    if (returnValue !== undefined) {
+      this.env.setToParent('return', returnValue);
     }
   }
 }

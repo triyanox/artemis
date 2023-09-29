@@ -1,14 +1,14 @@
 import Interpreter from '..';
-import { NodeType } from '@artemis-lang/parser';
+import { Node } from '@artemis-lang/parser';
 import Environment from '../../env';
 
 class Match {
-  ref: NodeType<'Reference'>;
+  condition: Node;
   value: Map<any, any>;
   env: Environment;
 
-  constructor(ref: NodeType<'Reference'>, value: Map<any, any>, env: Environment) {
-    this.ref = ref;
+  constructor(condition: Node, value: Map<any, any>, env: Environment) {
+    this.condition = condition;
     this.value = value;
     this.env = env;
   }
@@ -21,18 +21,32 @@ class Match {
   }
 
   call(): any {
-    const refValue = this.env.get(this.ref.value);
+    const interpreter = new Interpreter();
+    const refValue = interpreter.visit(this.condition as Node, this.env);
     const keys = this.visitMapKeys(this.value);
     const matchKey = keys.find((key) => key === refValue);
-    const interpreter = new Interpreter();
+
     if (matchKey) {
-      return interpreter.visit(this.value.get(matchKey), this.env);
+      const call = interpreter.visit(this.value.get(matchKey), this.env);
+
+      if (this.env.getReturn() !== undefined) {
+        return this.env.setToParent('return', this.env.getReturn());
+      } else {
+        return call;
+      }
     } else {
       const defaultKey = keys.find((key) => key === '_');
       if (defaultKey) {
-        return interpreter.visit(this.value.get(defaultKey), this.env);
+        const call = interpreter.visit(this.value.get(defaultKey), this.env);
+
+        if (this.env.getReturn() !== undefined) {
+          return this.env.setToParent('return', this.env.getReturn());
+        } else {
+          return call;
+        }
       }
     }
+
     throw new Error(`No match for '${refValue}'`);
   }
 }

@@ -17,11 +17,30 @@ class If {
 
   call(): any {
     const interpreter = new Interpreter();
+
+    let returnValue;
     if (interpreter.visit(this.condition, this.env)) {
-      interpreter.visit(this.thenBranch, this.env);
+      const call = interpreter.visit(this.thenBranch, this.env);
+
+      if (this.env.getReturn() !== undefined) {
+        returnValue = this.env.getReturn();
+      } else {
+        returnValue = call;
+      }
     } else if (this.elseBranch) {
-      interpreter.visit(this.elseBranch, this.env);
+      const call = interpreter.visit(this.elseBranch, this.env);
+
+      if (this.env.getReturn() !== undefined) {
+        returnValue = this.env.getReturn();
+      } else {
+        returnValue = call;
+      }
     }
+    if (returnValue !== undefined) {
+      this.env.setToParent('return', returnValue);
+    }
+
+    return returnValue;
   }
 }
 

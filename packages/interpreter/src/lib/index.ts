@@ -133,6 +133,12 @@ export default class Interpreter {
   visitFnReturn(node: NodeType<'Return'>, env: Environment): any {
     const value = this.visit(node.value, env);
     env.set('return', value);
+    try {
+      const parentEnv = env.getParent();
+      if (parentEnv) {
+        parentEnv.set('return', value);
+      }
+    } catch {}
     return value;
   }
 
@@ -161,11 +167,11 @@ export default class Interpreter {
   }
 
   visitString(node: NodeType<'String'>, env: Environment): any {
-    env.set(node.name, String(node.value));
+    env.set(node.name, String(node.value).replace(/^"(.*)"$/, '$1'));
   }
 
   visitStringLiteral(node: NodeType<'StringLiteral'>, _env: Environment): any {
-    return String(node.value);
+    return String(node.value).replace(/^"(.*)"$/, '$1');
   }
 
   visitBoolean(node: NodeType<'Boolean'>, env: Environment): any {
@@ -324,7 +330,7 @@ export default class Interpreter {
   }
 
   visitMatch(node: NodeType<'Match'>, env: Environment): any {
-    const match = new Match(node.ref, node.value, env);
+    const match = new Match(node.condition, node.value, env);
     return match.call();
   }
 }

@@ -26,10 +26,18 @@ class Fn {
       },
       fnEnv
     );
-    try {
-      return this.env.get('return');
-    } catch {
-      return call;
+
+    if (fnEnv.getReturn() !== undefined) {
+      this.env.setToParent('return', fnEnv.getReturn());
+      return fnEnv.getReturn();
+    } else {
+      try {
+        const val = this.env.get('return');
+        this.env.setToParent('return', val);
+        return val;
+      } catch {
+        return call;
+      }
     }
   }
 }

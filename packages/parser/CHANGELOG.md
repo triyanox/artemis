@@ -1,5 +1,16 @@
 # @artemis-lang/parser
 
+## 0.3.0
+
+### Minor Changes
+
+- Update and fixes minor bugs and overall improvements
+
+### Patch Changes
+
+- Updated dependencies
+  - @artemis-lang/lexer@0.3.0
+
 ## 0.2.3
 
 ### Patch Changes

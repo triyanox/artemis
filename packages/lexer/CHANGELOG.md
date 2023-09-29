@@ -1,5 +1,11 @@
 # @artemis-lang/lexer
 
+## 0.3.0
+
+### Minor Changes
+
+- Update and fixes minor bugs and overall improvements
+
 ## 0.2.3
 
 ### Patch Changes

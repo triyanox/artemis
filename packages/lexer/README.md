@@ -18,8 +18,8 @@
   - [Pattern Matching](#pattern-matching)
   - [Operators](#operators)
   - [Built-in Functions](#built-in-functions)
-  - [Export/Import](#exportimport)
   - [JS-Interop](#js-interop)
+- [Examples](#examples)
 
 ## Installation
 
@@ -271,6 +271,13 @@ maps and sets.
 (def hi (toUpperCase hi))
 (log hi)
 (println (repeat hi 2))
+
+/* read files */
+(def fileContent (readFile "README.md"))
+(println fileContent)
+(writeFile "bambo.md" "Hello World!")
+
+/* many other built-ins ... */
 ```
 
 ```bash
@@ -282,68 +289,6 @@ maps and sets.
 "HI"
 "HIHI"
 ```
-
-This is a list of built-in functions:
-
-- `print`: Prints a message to the console without a newline.
-- `println`: Prints a message to the console with a newline.
-- `exit`: Exits the program with a given exit code.
-- `log`: Logs a message to the console with a given log level.
-- `assert`: Throws an error if a given condition is not true.
-- `assertEq`: Throws an error if two values are not equal.
-- `assertGt`: Throws an error if a value is not greater than another value.
-- `assertLt`: Throws an error if a value is not less than another value.
-- `assertGte`: Throws an error if a value is not greater than or equal to another value.
-- `assertLte`: Throws an error if a value is not less than or equal to another value.
-- `assertTruthy`: Throws an error if a value is not truthy.
-- `assertFalsy`: Throws an error if a value is not falsy.
-- `assertThrows`: Throws an error if a function does not throw an error.
-- `assertNotThrows`: Throws an error if a function throws an error.
-- `length`: Returns the length of an array or string.
-- `at`: Returns the element at a given index in an array or string.
-- `push`: Adds an element to the end of an array.
-- `pop`: Removes and returns the last element of an array.
-- `remove`: Removes an element at a given index from an array.
-- `keys`: Returns an array of keys in an object.
-- `values`: Returns an array of values in an object.
-- `shift`: Removes and returns the first element of an array.
-- `unshift`: Adds an element to the beginning of an array.
-- `includes`: Returns true if an array or string includes a given element.
-- `slice`: Returns a new array or string with a portion of the original array or string.
-- `splice`: Changes an array by removing or replacing elements.
-- `concat`: Returns a new array that is the result of joining two or more arrays.
-- `reverse`: Reverses the order of elements in an array.
-- `sort`: Sorts the elements of an array.
-- `join`: Joins the elements of an array into a string.
-- `split`: Splits a string into an array of substrings.
-- `trim`: Removes whitespace from the beginning and end of a string.
-- `trimStart`: Removes whitespace from the beginning of a string.
-- `trimEnd`: Removes whitespace from the end of a string.
-- `replace`: Replaces a substring in a string with another substring.
-- `replaceAll`: Replaces all occurrences of a substring in a string with another substring.
-- `toLowerCase`: Converts a string to lowercase.
-- `toUpperCase`: Converts a string to uppercase.
-- `charAt`: Returns the character at a given index in a string.
-- `charCodeAt`: Returns the Unicode value of the character at a given index in a string.
-- `codePointAt`: Returns the Unicode code point of the character at a given index in a string.
-- `padEnd`: Pads a string with a given character until it reaches a given length.
-- `padStart`: Pads a string with a given character until it reaches a given length, starting from the beginning of the string.
-- `repeat`: Returns a new string that repeats a given string a given number of times.
-- `startsWith`: Returns true if a string starts with a given substring.
-- `endsWith`: Returns true if a string ends with a given substring.
-- `find`: Returns the first element in an array that satisfies a given condition.
-- `findIndex`: Returns the index of the first element in an array that satisfies a given condition.
-- `indexOf`: Returns the index of the first occurrence of a given element in an array or string.
-- `lastIndexOf`: Returns the index of the last occurrence of a given element in an array or string.
-- `map`: Returns a new array that is the result of applying a given function to each element of an array.
-- `filter`: Returns a new array that contains only the elements of an array that satisfy a given condition.
-- `reduce`: Applies a given function to each element of an array, accumulating a single value.
-- `reduceRight`: Applies a given function to each element of an array in reverse order, accumulating a single value.
-- `some`: Returns true if at least one element of an array satisfies a given condition.
-- `every`: Returns true if all elements of an array satisfy a given condition.
-- `fill`: Changes all elements of an array to a given value.
-- `copyWithin`: Copies a portion of an array to another location in the same array.
-
 
 ### JS-Interop
 
@@ -377,3 +322,19 @@ also you can return values from the js block like this:
 # Output
 12
 ```
+
+## Examples
+
+You can find examples in the [examples](https://github.com/triyanox/artemis/blob/main/examples/) directory.
+
+here some examples:
+
+- [Hello World](https://github.com/triyanox/artemis/blob/main/examples/hello-word.art)
+- [Word Occurrences](https://github.com/triyanox/artemis/blob/main//examples/word-occurrences.art)
+- [Fibonacci Sequence](https://github.com/triyanox/artemis/blob/main//examples/fib-seq.art)
+- [Files](https://github.com/triyanox/artemis/blob/main//examples/fs.art)
+- [FizzBuzz](https://github.com/triyanox/artemis/blob/main//examples/fizz-buzz.art)
+
+## License
+
+[MIT](https://github.com/triyanox/artemis/blob/main/LICENSE)

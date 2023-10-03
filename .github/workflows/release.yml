@@ -26,11 +26,14 @@ jobs:
       - name: Install Dependencies
         run: pnpm i
 
-      - name: Create Release Pull Request or Publish to npm
+      - name: Create Release PR or Publish Packages
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: npm run release
+          publish: pnpm release
+          version: pnpm version-packages
+          commit: 'chore: update package versions'
+          title: 'chore: update package versions'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -48,7 +48,7 @@ class For {
 
       if (forEnv.getReturn() !== undefined) {
         returnValue = forEnv.getReturn();
-        break; // Exit the loop if a return value is set
+        break;
       }
     }
 

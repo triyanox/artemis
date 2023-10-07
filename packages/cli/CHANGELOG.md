@@ -1,5 +1,13 @@
 # @artemis-lang/cli
 
+## 0.3.2
+
+### Patch Changes
+
+- 0845821: Add accessors
+- Updated dependencies [0845821]
+  - @artemis-lang/interpreter@0.3.2
+
 ## 0.3.0
 
 ### Minor Changes

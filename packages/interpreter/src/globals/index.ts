@@ -3,7 +3,8 @@ import Interpreter from '..';
 const globals = new Map();
 
 globals.set('_', '_');
-globals.set('require', require);
+globals.set('global', global);
+globals.set('process', process);
 
 export default globals;
 

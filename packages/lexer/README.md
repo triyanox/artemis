@@ -323,6 +323,41 @@ also you can return values from the js block like this:
 12
 ```
 
+### Accessors
+
+**artemis** supports accessors.
+
+```rs
+/* The global Math object */
+(def random (get Math "random"))
+/* Or you can use the get method of the global object */
+(def random (get global "Math.random"))
+
+(fn rand [n] ((* n (random))))
+(def a (rand 100))
+(println a)
+
+/* The Date object */
+(def now (get global "Date.now"))
+(println (now))
+
+(def env (get global "process.env"))
+(println (get env "HOME"))
+
+/* You can also set properties on the global object */
+(def a {a: 1})
+(set a "b" 2)
+(println (get a "b"))
+```
+
+```bash
+# Output
+18.442008509443617 # this is a random number
+1696641969822 # this is the current timestamp
+/Users/artemis # this is my home directory
+2 # this is the value of the property "b" on the map "a"
+```
+
 ## Examples
 
 You can find examples in the [examples](https://github.com/triyanox/artemis/blob/main/examples/) directory.

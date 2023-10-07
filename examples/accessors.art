@@ -1,0 +1,20 @@
+/* The global Math object */
+(def random (get Math "random"))
+/* Or you can use the get method of the global object */
+(def random (get global "Math.random"))
+
+(fn rand [n] ((* n (random))))
+(def a (rand 100))
+(println a)
+
+/* The Date object */
+(def now (get global "Date.now"))
+(println (now))
+
+(def env (get global "process.env"))
+(println (get env "HOME"))
+
+/* You can also set properties on the global object */
+(def a {a: 1})
+(set a "b" 2)
+(println (get a "b"))

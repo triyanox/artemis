@@ -1,6 +1,6 @@
 {
   "name": "@artemis-lang/parser",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "access": "public",
   "type": "module",
   "description": "The artemis language parser",

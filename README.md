@@ -1,4 +1,4 @@
-# **artemis** - A simple, easy to learn, and easy to use programming language written in typescript.
+# `Artemis`: TypeScript-Powered Scripting Language
 
 <img src="https://raw.githubusercontent.com/triyanox/artemis/main/assets/banner.png" alt="artemis banner" title="artemis" align="center" height="auto" width="100%"/>
 

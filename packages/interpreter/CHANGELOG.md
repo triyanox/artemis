@@ -1,5 +1,14 @@
 # @artemis-lang/interpreter
 
+## 0.3.3
+
+### Patch Changes
+
+- 2a39cd7: Update readme files
+- Updated dependencies [2a39cd7]
+  - @artemis-lang/lexer@0.3.3
+  - @artemis-lang/parser@0.3.3
+
 ## 0.3.2
 
 ### Patch Changes

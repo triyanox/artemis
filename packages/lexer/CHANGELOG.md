@@ -1,5 +1,11 @@
 # @artemis-lang/lexer
 
+## 0.3.3
+
+### Patch Changes
+
+- 2a39cd7: Update readme files
+
 ## 0.3.2
 
 ### Patch Changes

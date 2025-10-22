@@ -5,6 +5,7 @@ const globals = new Map();
 globals.set('_', '_');
 globals.set('global', global);
 globals.set('process', process);
+globals.set('Math', Math);
 
 export default globals;
 

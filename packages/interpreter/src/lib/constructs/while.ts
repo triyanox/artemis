@@ -14,22 +14,21 @@ class While {
   }
 
   call(): any {
-    const whileEnv = new Environment(this.env);
     let returnValue;
 
     while (true) {
       const interpreter = new Interpreter();
-      if (interpreter.visit(this.condition, whileEnv)) {
+      if (interpreter.visit(this.condition, this.env)) {
         interpreter.visitProgram(
           {
             type: 'Program',
             body: this.body
           },
-          whileEnv
+          this.env
         );
 
-        if (whileEnv.getReturn() !== undefined) {
-          returnValue = whileEnv.getReturn();
+        if (this.env.getReturn() !== undefined) {
+          returnValue = this.env.getReturn();
           break;
         }
       } else {

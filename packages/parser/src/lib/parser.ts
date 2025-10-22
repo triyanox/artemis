@@ -74,12 +74,17 @@ class Parser {
   }
 
   nextBy(n: number) {
-    if (!this.isAtEnd()) return this.tokens[this.current + n];
-    return this.tokens[this.current];
+    const index = this.current + n;
+    if (index >= 0 && index < this.tokens.length) {
+      return this.tokens[index];
+    }
+    // Return last token or undefined if no tokens exist
+    return this.tokens.length > 0 ? this.tokens[this.tokens.length - 1] : undefined;
   }
 
   nextByType(n: number) {
-    return this.nextBy(n).type;
+    const token = this.nextBy(n);
+    return token ? token.type : undefined;
   }
 
   parse() {

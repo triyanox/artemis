@@ -7,16 +7,16 @@ const get = new NativeFn('get', (_interpreter, args) => {
     array: {
       match: (arr: any) => Array.isArray(arr),
       access: (arr: any, acc: any) => {
-        if (!acc || !Number.isInteger(acc)) {
+        if (!acc && acc !== 0 || !Number.isInteger(acc)) {
           throw 'Expected a number as second argument for List getter';
         }
-        return Array(arr).at(acc);
+        return arr.at(acc);
       }
     },
     map: {
       match: (map: any) => map instanceof Map,
       access: (map: any, acc: any) => {
-        if (!acc) {
+        if (acc === undefined || acc === null) {
           throw 'Expected a key as second argument for Map getter';
         }
         const keys = acc.split('.');
@@ -33,7 +33,7 @@ const get = new NativeFn('get', (_interpreter, args) => {
     object: {
       match: (obj: any) => typeof obj === 'object',
       access: (obj: any, acc: any) => {
-        if (!acc) {
+        if (acc === undefined || acc === null) {
           throw 'Expected a key as second argument for Object getter';
         }
         const keys = acc.split('.');

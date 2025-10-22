@@ -1,5 +1,13 @@
 # @artemis-lang/lexer
 
+## 0.3.4
+
+### Patch Changes
+
+- Documentation improvements and project organization updates
+- Fixed critical parser and interpreter bugs affecting lexer token handling
+- Standardized syntax across examples
+
 ## 0.3.3
 
 ### Patch Changes

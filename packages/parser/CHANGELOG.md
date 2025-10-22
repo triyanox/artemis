@@ -1,5 +1,15 @@
 # @artemis-lang/parser
 
+## 0.3.4
+
+### Patch Changes
+
+- **Fixed**: Parser crash with bounds checking in `nextBy()` and `nextByType()` methods
+- **Fixed**: Improved null safety when accessing tokens beyond array bounds
+- Updated README with comprehensive parser documentation and AST node types
+- Updated dependencies
+  - @artemis-lang/lexer@0.3.4
+
 ## 0.3.3
 
 ### Patch Changes

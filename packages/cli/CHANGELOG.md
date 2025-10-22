@@ -1,5 +1,13 @@
 # @artemis-lang/cli
 
+## 0.3.4
+
+### Patch Changes
+
+- Updated README with cleaner CLI-specific documentation
+- Updated dependencies
+  - @artemis-lang/interpreter@0.3.4
+
 ## 0.3.3
 
 ### Patch Changes

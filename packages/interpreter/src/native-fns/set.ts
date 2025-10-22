@@ -8,7 +8,7 @@ const set = new NativeFn('set', (interpreter, args) => {
     map: {
       match: (map: any) => map instanceof Map,
       access: (map: any, acc: any) => {
-        if (!acc) {
+        if (acc === undefined || acc === null) {
           throw 'Expected a key as second argument for Map setter';
         }
         const keys = acc.split('.');
@@ -29,7 +29,7 @@ const set = new NativeFn('set', (interpreter, args) => {
     object: {
       match: (obj: any) => typeof obj === 'object',
       access: (obj: any, acc: any) => {
-        if (!acc) {
+        if (acc === undefined || acc === null) {
           throw 'Expected a key as second argument for Object setter';
         }
         const keys = acc.split('.');

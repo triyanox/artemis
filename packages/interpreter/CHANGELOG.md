@@ -1,5 +1,18 @@
 # @artemis-lang/interpreter
 
+## 0.3.4
+
+### Patch Changes
+
+- **Fixed**: While loop variable scoping - variables now properly accessible across loop iterations
+- **Fixed**: Empty string handling in Map get/set operations
+- **Fixed**: Added Math object to global environment
+- **Fixed**: Array get() function - corrected from `Array(arr).at()` to `arr.at()`
+- Updated README with comprehensive API documentation
+- Updated dependencies
+  - @artemis-lang/lexer@0.3.4
+  - @artemis-lang/parser@0.3.4
+
 ## 0.3.3
 
 ### Patch Changes

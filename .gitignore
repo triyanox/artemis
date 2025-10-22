@@ -36,3 +36,8 @@ yarn-error.log*
 .vercel
 dist
 bin
+
+# test outputs and documentation
+docs/
+test-*.art
+*.art.tmp
